@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dawi">
+	<resultMap type="UsuarioIbatis" id="resultUsuario">
+		<id column="idusuario" property="codigoUsuario"/>
+		<result column="nombres" property="nombres"/>
+		<result column="apellidos" property="apellidos"/>
+	</resultMap>
+	<resultMap type="EnlaceIbatis" id="resultEnlace">
+		<id column="idenlace" property="idEnlace"/>
+		<result column="descripcion" property="descripcion"/>
+		<result column="ruta" property="ruta"/>
+	</resultMap>
+	
+	
+	<select id="SQL_InicarSesion" statementType="CALLABLE" resultMap="resultUsuario" parameterType="UsuarioIbatis">
+		call sp_iniciarSesion(#{login},#{clave});
+	</select>
+	<select id="SQL_TraerEnlacesPorUSuario" statementType="CALLABLE" resultMap="resultEnlace" parameterType="int">
+		call sp_traesEnlacesPorUsuario(#{codUsu});
+	</select>
+	
+	
+</mapper>
+
+
+

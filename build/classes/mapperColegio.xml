@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dawi">
+	<resultMap type="ColegioIbatis" id="resultColegio">
+		<id column="idcolegio" property="cod"/>
+		<result column="nombre" property="nombre"/>
+		<result column="director" property="director"/>
+		<result column="fecha" property="fecha"/>
+	</resultMap>
+	<select id="SQL_listarColegios" statementType="CALLABLE" resultMap="resultColegio">
+		call sp_listAllColegios();
+	</select>
+	
+</mapper>
+
+
+

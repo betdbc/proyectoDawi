@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dawi">
+	<resultMap type="MedicamentoIbatis" id="resultMedicamento">
+		<id column="id_med" property="idMedicamento"/>
+		<result column="nom_med" property="nombre"/>
+		<result column="des_med" property="descripcion"/>
+		<result column="sto_med" property="stock"/>
+		<result column="pre_med" property="precio"/>
+		<result column="fec_fab_med" property="fechaFabricacion"/>
+		<result column="id_lab" property="idLaboratorio"/>
+		<result column="nom_lab" property="nomLaboratorio"/>
+		<result column="cod_tip_med" property="idTipo"/>
+		<result column="nom_tip_med" property="nomTipo"/>
+	</resultMap>
+	<resultMap type="MedicamentoIbatis" id="resultFoto">
+		<result column="foto" property="fotoBytes"/>
+	</resultMap>
+	
+	<select id="SQL_listarMedicamentos" statementType="CALLABLE" resultMap="resultMedicamento">
+		call sp_listAllMedicamentos();
+	</select>
+	<select id="SQL_listarMedicamentosAtNombre" statementType="CALLABLE" resultMap="resultMedicamento" 
+					parameterType="string">
+		call sp_consultaMedicamentoAtNombre(#{nom});
+	</select>
+	<select id="SQL_listarMedicamentosAtLaboratorio" statementType="CALLABLE" resultMap="resultMedicamento" 
+					parameterType="int">
+		call sp_listaMedicamentoAtLaboratorio(#{codLab});
+	</select>
+	
+	
+	
+	
+	<select id="SQL_fotoMedicamento" statementType="CALLABLE" resultMap="resultFoto" 
+				parameterType="int">
+		call sp_fotoMedicamento(#{id});
+	</select>
+	
+	<select id="SQL_listarMedicamentosAtLaboratorioAtTipo" statementType="CALLABLE" resultMap="resultMedicamento" 
+				parameterType="ParametrosIbatis">
+		call sp_consultaMedicamentoLaboratorioPorTipo(#{idLab},#{idTipo});
+	</select>
+	
+	<insert id="SQL_InsertarMedicamento" statementType="CALLABLE" parameterType="MedicamentoIbatis">
+		call sp_registrarMedicamento(#{nombre},#{descripcion},#{stock},#{precio},#{fechaFabricacion},
+									#{idLaboratorio},#{idTipo},#{fotoBytes});
+	</insert>
+	<update id="SQL_ActualizarMedicamento" statementType="CALLABLE" parameterType="MedicamentoIbatis">
+		call sp_actualizarMedicamento(#{idMedicamento},#{nombre},#{descripcion},#{stock},#{precio},
+										#{fechaFabricacion},#{idLaboratorio},#{idTipo});
+	</update>
+	<delete id="SQL_EliminarMedicamento" statementType="CALLABLE" parameterType="int">
+		call sp_eliminarMedicamento(#{id});
+	</delete>
+	<update id="SQL_ActualizarFotoMedicamento" statementType="CALLABLE" parameterType="MedicamentoIbatis">
+		call sp_actualizarFotoMedicamento(#{idMedicamento},#{fotoBytes});
+	</update>
+</mapper>
+
+
+
+
+
+
+
+

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dawi">
+	<resultMap type="TipoIbatis" id="resultTipo">
+		<id column="cod_tip_med" property="codigo"/>
+		<result column="nom_tip_med" property="nombre"/>
+		<result column="cod_lab" property="codigoLaboratorio"/>
+	</resultMap>
+	<select id="SQL_listarTipoMedicamentoByLaboratorio" statementType="CALLABLE" 
+				resultMap="resultTipo" parameterType="int">
+		call sp_listAllTipoMedicamnetoByLaboratorio(#{codLab});
+	</select>
+</mapper>
+
+
+
+
+
+
+
+

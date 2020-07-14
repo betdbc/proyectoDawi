@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dawi">
+	<resultMap type="ClienteIbatis" id="resultCliente">
+		<id column="cod_cli" property="codigo"/>
+		<result column="nom_cli" property="nombres"/>
+		<result column="ape_cli" property="apellidos"/>
+	</resultMap>
+	<select id="SQL_listarClientes" statementType="CALLABLE" resultMap="resultCliente">
+		call sp_listAllClientes();
+	</select>
+	
+	
+	
+	
+</mapper>
+
+
+
