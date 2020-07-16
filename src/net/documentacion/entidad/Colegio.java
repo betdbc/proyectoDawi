@@ -30,6 +30,5 @@ public class Colegio {
 	public void setFecha(String fecha) {
 		this.fecha = fecha;
 	}
-	
-	
+
 }

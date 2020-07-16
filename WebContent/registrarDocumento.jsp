@@ -85,10 +85,6 @@
 		                                	
 		                                	t-->
 		                                	<div class="form-group">
-			                                   	<label for="staticEmail">Codigo Colegio</label>
-												<input class="form-control" id="idCodigo" name="documentacion.codigoColegio" placeholder="Ingrese el asunto"/>
-			                                </div>
-			                                <div class="form-group">
 			                                   	<label for="staticEmail">Nombre</label>
 												<input class="form-control" id="idNombre" name="documentacion.nombre" placeholder="Ingrese el asunto"/>
 			                                </div> 
@@ -102,7 +98,12 @@
 														<input class="form-control" id="idFecha" name="documentacion.fecha" placeholder="Ingrese fecha"/>
 			                                    </div>
 			                                 </div>     
-		                                  
+		                                  <div class="form-group">
+		                                        <label for="staticEmail">Colegio</label>
+													<select id="idColegio" name="documentacion.codigoColegio" class='form-control'>
+							                                 <option value=" " >[SELECCIONE]</option>
+							                         </select>
+		                                    </div>
 		                                  
 		                                   
                              	                                    
@@ -146,10 +147,10 @@ $(document).ready(function() {
 <script>	
 function cargar(){
 
-	$.getJSON("listComboColegio",{},function(data){
+	$.getJSON("listAllColegioscombo",{},function(data){
 		//bucle
-		$.each(data.listaTipos,function(index,item){
-			$("#idCodigo").append("<option value='"+item.codigo+"'>"+item.nombre+"</option>");
+		$.each(data.listaColegios,function(index,item){
+			$("#idColegio").append("<option value='"+item.cod+"'>"+item.nombre+"</option>");
 		})
 	})
 	

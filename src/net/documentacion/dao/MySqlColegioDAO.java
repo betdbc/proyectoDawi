@@ -66,6 +66,24 @@ public class MySqlColegioDAO implements ColegioDAO{
 			}
 			return estado;
 		}
+
+
+
+		@Override
+		public List<Colegio> listacombo() {
+			List<Colegio> lista=new ArrayList<Colegio>();
+			//crear una sesión de la conexión "factory"
+			SqlSession session=factory.openSession();
+			try {
+				lista=session.selectList("SQL_listarColegiosCombo");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			finally {
+				session.close();
+			}
+			return lista;
+		}
 		
 		
 		

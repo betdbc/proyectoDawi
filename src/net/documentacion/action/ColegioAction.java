@@ -34,6 +34,12 @@ public class ColegioAction extends ActionSupport {
 				return "ok";
 			}
 			
+			@Action(value="/listAllColegioscombo",results= {@Result(name="ok",type="json") })
+			public String listAllColegioscombo() {
+				listaColegios=colegioService.listaColegiocombo();
+				return "ok";
+			}
+			
 			
 			@Action(value="/saveColegio",results= {@Result(name="ok",type="redirect",location="/registrarColegio.jsp") })
 			public String saveColegio() {

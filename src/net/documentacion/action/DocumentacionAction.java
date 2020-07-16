@@ -12,6 +12,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 import net.documentacion.entidad.Colegio;
 import net.documentacion.entidad.Documentacion;
+import net.documentacion.service.ColegioService;
 import net.documentacion.service.DocumentacionService;
 
 @ParentPackage("dawi")
@@ -19,21 +20,28 @@ public class DocumentacionAction extends ActionSupport {
 	//REGISTRAR
 	private Documentacion documentacion;
 	
+	
 	//Consultar
 	private List<Documentacion> listaDocumentacion;
-	
+	private List<Colegio>listaColegio;
 	
 	
 	private DocumentacionService documentacionService;
+	private ColegioService colegioService;
 	
 	private Map<String, Object> session=ActionContext.getContext().getSession();
 	
 	
 	public DocumentacionAction() {
 		documentacionService=new DocumentacionService();
+		colegioService= new ColegioService();
 	}
 	
-	
+	@Action(value="/listAllColegios",results= {@Result(name="ok",type="json") })
+	public String listAllColegios() {
+		listaColegio= colegioService.listaColegio();
+		return "ok";
+	}
 	
 	@Action(value="/listAllDocumentaciones",results= {@Result(name="ok",type="json") })
 	public String listAllDocumentaciones() {

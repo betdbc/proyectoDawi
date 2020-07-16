@@ -9,6 +9,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result column="director" property="director"/>
 		<result column="fecha" property="fecha"/>
 	</resultMap>
+	<select id="SQL_listarColegiosCombo" statementType="CALLABLE" resultMap="resultColegio">
+		call listaComboCole();
+	</select>
 	<select id="SQL_listarColegios" statementType="CALLABLE" resultMap="resultColegio">
 		call sp_listAllColegios();
 	</select>
