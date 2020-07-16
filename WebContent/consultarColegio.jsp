@@ -2,7 +2,7 @@
 <html class="no-js">
   <head>
     <meta charset="UTF-8">
-    <title>Boleta COLEGIO</title>
+    <title>Consultar COLEGIO</title>
  
 <!-- Latest compiled and minified CSS -->
 <!-- Latest compiled and minified CSS -->
@@ -22,7 +22,7 @@
                         <div class="row">
             	<div class="col-lg-12">
             		<div class="panel panel-primary">
-            			<div class="panel-heading">Cliente</div>
+            			<div class="panel-heading">Consultar Colegio</div>
             			<div class="panel-body">
             			
             				<div class="form-group">

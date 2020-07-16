@@ -10,6 +10,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import net.documentacion.entidad.Colegio;
+import net.documentacion.entidad.Documentacion;
 import net.documentacion.interfaces.ColegioDAO;
 
 public class MySqlColegioDAO implements ColegioDAO{
@@ -46,21 +47,24 @@ public class MySqlColegioDAO implements ColegioDAO{
 			return lista;
 		}
 		
-		//LISTAR COMBO PARA REGISTRAR
+		
+		
+		//REGISTRAR COLEGIO
 		@Override
-		public List<Colegio> listaComboColegio() {
-			List<Colegio> lista=new ArrayList<Colegio>();
-			//crear una sesión de la conexión "factory"
+		public int saveColegio(Colegio col) {
+			int estado=-1;
 			SqlSession session=factory.openSession();
 			try {
-				lista=session.selectList("SQL_listarComboColegios");
+				estado=session.insert("SQL_InsertarColegio",col);
+				session.commit();
 			} catch (Exception e) {
+				session.rollback();
 				e.printStackTrace();
 			}
 			finally {
 				session.close();
 			}
-			return lista;
+			return estado;
 		}
 		
 		

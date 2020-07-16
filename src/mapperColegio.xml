@@ -13,14 +13,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		call sp_listAllColegios();
 	</select>
 	
-	
-	<resultMap type="ColegioIbatis" id="resultComboColegio">
-		<id column="idcolegio" property="cod"/>
-		<result column="nomcole" property="nombre"/>
-	</resultMap>
-	<select id="SQL_listarComboColegios" statementType="CALLABLE" resultMap="resultComboColegio">
-		call sp_listaComboCole();
-	</select>
+	<insert id="SQL_InsertarColegio" statementType="CALLABLE" parameterType="ColegioIbatis">
+		call sp_registrarColegios(#{nombre},#{director},#{fecha});
+	</insert>
 	
 </mapper>
 

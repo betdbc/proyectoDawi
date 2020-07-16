@@ -14,8 +14,9 @@ public class ColegioService {
 		return daoColegio.listaColegio();
 	}
 	
-	public List<Colegio> listaComboColegio(){
-		return daoColegio.listaComboColegio();
+	
+	public int saveColegio(Colegio bean) {
+		return daoColegio.saveColegio(bean);
 	}
 	
 	

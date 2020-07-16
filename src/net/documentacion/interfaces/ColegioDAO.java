@@ -7,5 +7,6 @@ import net.documentacion.entidad.Colegio;
 public interface ColegioDAO {
 	public List<Colegio> listaColegio();
 
-	List<Colegio> listaComboColegio();
+
+	public int saveColegio(Colegio col);
 }
