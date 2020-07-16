@@ -8,12 +8,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result column="nombre" property="nombre"/>
 		<result column="asunto" property="asunto"/>
 		<result column="fecha" property="fecha"/>
-		<result column="codigo" property="codigoColegio"/>
+		<result column="nomcole" property="nombrecole"/>
 		
 	</resultMap>
 	<select id="SQL_listarDocumentacion" statementType="CALLABLE" resultMap="resultDocumentacion">
 		call sp_listAllDocumentos();
 	</select>
+	<insert id="SQL_InsertarDocumentacion" statementType="CALLABLE" parameterType="DocumentacionIbatis">
+		call sp_registrarDocumentacion(#{nombre},#{asunto},#{fecha},#{codigoColegio});
+	</insert>
 	
 </mapper>
 

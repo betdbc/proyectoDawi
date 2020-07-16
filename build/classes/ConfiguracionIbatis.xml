@@ -5,15 +5,18 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 <configuration>
 	<!-- PASO 1: Registro de las clases -->
 	<typeAliases>
-		<typeAlias type="net.farmacia.entidad.Laboratorio" alias="LaboratorioIbatis"/>
-		<typeAlias type="net.farmacia.entidad.Medicamento" alias="MedicamentoIbatis"/>
-		<typeAlias type="net.farmacia.entidad.TipoMedicamento" alias="TipoIbatis"/>
-		<typeAlias type="net.farmacia.entidad.Parametros" alias="ParametrosIbatis"/>
-		<typeAlias type="net.farmacia.entidad.Usuario" alias="UsuarioIbatis"/>
-		<typeAlias type="net.farmacia.entidad.Enlace" alias="EnlaceIbatis"/>
-		<typeAlias type="net.farmacia.entidad.Cliente" alias="ClienteIbatis"/>
-		<typeAlias type="net.farmacia.entidad.Documentacion" alias="DocumentacionIbatis"/>
-		<typeAlias type="net.farmacia.entidad.Colegio" alias="ColegioIbatis"/>
+		<typeAlias type="net.documentacion.entidad.Documentacion" alias="DocumentacionIbatis"/>
+		<typeAlias type="net.documentacion.entidad.Colegio" alias="ColegioIbatis"/>
+	
+	
+		<typeAlias type="net.documentacion.entidad.Laboratorio" alias="LaboratorioIbatis"/>
+		<typeAlias type="net.documentacion.entidad.Medicamento" alias="MedicamentoIbatis"/>
+		<typeAlias type="net.documentacion.entidad.TipoMedicamento" alias="TipoIbatis"/>
+		<typeAlias type="net.documentacion.entidad.Parametros" alias="ParametrosIbatis"/>
+		<typeAlias type="net.documentacion.entidad.Usuario" alias="UsuarioIbatis"/>
+		<typeAlias type="net.documentacion.entidad.Enlace" alias="EnlaceIbatis"/>
+		<typeAlias type="net.documentacion.entidad.Cliente" alias="ClienteIbatis"/>
+		
 	</typeAliases>
 	<!-- PASO 2: conexión a la base de datos -->
 	<environments default="development">
@@ -29,13 +32,15 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	</environments>
 	<!-- PASO 3: registro de los archivos xml que van almacenar las sentencias SQL-->
 	<mappers>
+		<mapper resource="mapperDocumentacion.xml"/>
+		<mapper resource="mapperColegio.xml"/>
+	
 		<mapper resource="mapperLaboratorio.xml"/>	
 		<mapper resource="mapperMedicamento.xml"/>
 		<mapper resource="mapperTipoMedicamento.xml"/>
 		<mapper resource="mapperUsuario.xml"/>
 		<mapper resource="mapperBoleta.xml"/>
-		<mapper resource="mapperDocumentacion.xml"/>
-		<mapper resource="mapperColegio.xml"/>
+		
 	</mappers>
 </configuration>
 

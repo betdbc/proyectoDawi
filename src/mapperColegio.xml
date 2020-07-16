@@ -5,12 +5,21 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="dawi">
 	<resultMap type="ColegioIbatis" id="resultColegio">
 		<id column="idcolegio" property="cod"/>
-		<result column="nombre" property="nombre"/>
+		<result column="nomcole" property="nombre"/>
 		<result column="director" property="director"/>
 		<result column="fecha" property="fecha"/>
 	</resultMap>
 	<select id="SQL_listarColegios" statementType="CALLABLE" resultMap="resultColegio">
 		call sp_listAllColegios();
+	</select>
+	
+	
+	<resultMap type="ColegioIbatis" id="resultComboColegio">
+		<id column="idcolegio" property="cod"/>
+		<result column="nomcole" property="nombre"/>
+	</resultMap>
+	<select id="SQL_listarComboColegios" statementType="CALLABLE" resultMap="resultComboColegio">
+		call sp_listaComboCole();
 	</select>
 	
 </mapper>
