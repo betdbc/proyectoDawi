@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dawi">
+	<resultMap type="IngresoIbatis" id="resultIngreso">
+		<id column="codigoingreso" property="codigoIngreso"/>
+		<result column="estado" property="estado"/>
+		<result column="nomcole" property="nomCole"/>
+		<result column="asunto" property="asunto"/>
+		<result column="fecha" property="fecha"/>
+		
+	</resultMap>
+	<select id="SQL_listarIngreso" statementType="CALLABLE" resultMap="resultIngreso">
+		call sp_listAllIngreso();
+	</select>
+	<insert id="SQL_insertarIngreso" statementType="CALLABLE" parameterType="IngresoIbatis">
+		call sp_registrarOrdenIngreso(#{estado},#{codigocolegio},#{asunto},#{fecha});
+	</insert>
+	
+</mapper>
+
+
+

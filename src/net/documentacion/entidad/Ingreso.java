@@ -1,19 +1,19 @@
 package net.documentacion.entidad;
 
 public class Ingreso {
-	private int codigoIngreso, codigoDocumentacion;
-	private String estado, nombre, asunto, fecha;
+	private int codigoIngreso, codigocolegio;
+	private String estado, nomCole, asunto, fecha;
 	public int getCodigoIngreso() {
 		return codigoIngreso;
 	}
 	public void setCodigoIngreso(int codigoIngreso) {
 		this.codigoIngreso = codigoIngreso;
 	}
-	public int getCodigoDocumentacion() {
-		return codigoDocumentacion;
+	public int getCodigocolegio() {
+		return codigocolegio;
 	}
-	public void setCodigoDocumentacion(int codigoDocumentacion) {
-		this.codigoDocumentacion = codigoDocumentacion;
+	public void setCodigocolegio(int codigocolegio) {
+		this.codigocolegio = codigocolegio;
 	}
 	public String getEstado() {
 		return estado;
@@ -21,11 +21,11 @@ public class Ingreso {
 	public void setEstado(String estado) {
 		this.estado = estado;
 	}
-	public String getNombre() {
-		return nombre;
+	public String getNomCole() {
+		return nomCole;
 	}
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public void setNomCole(String nomCole) {
+		this.nomCole = nomCole;
 	}
 	public String getAsunto() {
 		return asunto;
@@ -39,6 +39,9 @@ public class Ingreso {
 	public void setFecha(String fecha) {
 		this.fecha = fecha;
 	}
+	
+	
+	
 	
 	
 

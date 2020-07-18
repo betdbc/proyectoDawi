@@ -3,6 +3,7 @@ package net.documentacion.fabrica;
 import net.documentacion.dao.MySqlClienteDAO;
 import net.documentacion.dao.MySqlColegioDAO;
 import net.documentacion.dao.MySqlDocumentacionDAO;
+import net.documentacion.dao.MySqlIngresoDAO;
 import net.documentacion.dao.MySqlLaboratorioDAO;
 import net.documentacion.dao.MySqlMedicamentoDAO;
 import net.documentacion.dao.MySqlTipoMedicamentoDAO;
@@ -11,6 +12,7 @@ import net.documentacion.entidad.TipoMedicamento;
 import net.documentacion.interfaces.ClienteDAO;
 import net.documentacion.interfaces.ColegioDAO;
 import net.documentacion.interfaces.DocumentacionDAO;
+import net.documentacion.interfaces.IngresoDAO;
 import net.documentacion.interfaces.LaboratorioDAO;
 import net.documentacion.interfaces.MedicamentoDAO;
 import net.documentacion.interfaces.TipoMedicamentoDAO;
@@ -58,6 +60,12 @@ public class MySqlDAOFactory extends DAOFactory {
 	public ColegioDAO getColegioDAO() {
 		// TODO Auto-generated method stub
 		return new MySqlColegioDAO();
+	}
+
+	@Override
+	public IngresoDAO getIngresoDAO() {
+		// TODO Auto-generated method stub
+		return new MySqlIngresoDAO();
 	}
 
 

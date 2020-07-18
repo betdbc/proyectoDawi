@@ -2,6 +2,7 @@ package net.documentacion.fabrica;
 import net.documentacion.interfaces.ClienteDAO;
 import net.documentacion.interfaces.ColegioDAO;
 import net.documentacion.interfaces.DocumentacionDAO;
+import net.documentacion.interfaces.IngresoDAO;
 import net.documentacion.interfaces.LaboratorioDAO;
 import net.documentacion.interfaces.MedicamentoDAO;
 import net.documentacion.interfaces.TipoMedicamentoDAO;
@@ -20,6 +21,7 @@ public abstract class DAOFactory {
     // registramos nuestros daos
     public abstract DocumentacionDAO getDocumentacionDAO();
     public abstract ColegioDAO getColegioDAO();
+    public abstract IngresoDAO getIngresoDAO();
     
     
     public abstract LaboratorioDAO getLaboratorioDAO();

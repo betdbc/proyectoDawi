@@ -7,6 +7,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	<typeAliases>
 		<typeAlias type="net.documentacion.entidad.Documentacion" alias="DocumentacionIbatis"/>
 		<typeAlias type="net.documentacion.entidad.Colegio" alias="ColegioIbatis"/>
+		<typeAlias type="net.documentacion.entidad.Ingreso" alias="IngresoIbatis"/>
 	
 	
 		<typeAlias type="net.documentacion.entidad.Laboratorio" alias="LaboratorioIbatis"/>
@@ -34,6 +35,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	<mappers>
 		<mapper resource="mapperDocumentacion.xml"/>
 		<mapper resource="mapperColegio.xml"/>
+		<mapper resource="mapperIngreso.xml"/>
 	
 		<mapper resource="mapperLaboratorio.xml"/>	
 		<mapper resource="mapperMedicamento.xml"/>

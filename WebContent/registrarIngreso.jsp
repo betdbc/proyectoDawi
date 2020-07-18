@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css" type="text/css"/>
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" type="text/css"/>
 
-<title>Documento</title>
+<title>Ingreso</title>
 <style>
 	.modal-header, h4, .close {
 		background-color: #286090;
@@ -55,7 +55,7 @@
 
 
 	<div class="container">
-		<h3 align="center">Registrar Documento</h3>
+		<h3 align="center">	Registrar de Ingreso</h3>
 
 	
 	
@@ -65,45 +65,50 @@
 				<!-- Modal content-->
 				<div>
 				<div class="modal-header" style="padding: 5px 20px">
-					Registro de Documentos<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					Registro de Orden de Ingreso<button type="button" class="close" data-dismiss="modal" aria-label="Close">
           				
        				   </button>
 				</div>
 				<div class="modal-body" style="padding: 20px 20px;">
-					<form id="idRegistra" accept-charset="UTF-8" action="saveDocumentacion" 
+					<form id="idRegistra" accept-charset="UTF-8" action="saveIngreso" 
 													class="form-horizontal" method="post" data-toggle="validator" role="form">						
 		                   
 		                                	<!-- Modal conten
+		                                		
 		                                		<div class="form-group">
-		                                        <label for="staticEmail">Centro Educativo</label>
-													<select id="idCodigo" name="documentacion.codigoColegio" class='form-control'>
+			                                   	<label for="staticEmail">Estado</label>
+												<input class="form-control" id="idEstado" name="ingreso.estado" placeholder="Ingrese el asunto"/>
+			                                </div>
+		                                	t-->
+		                                	
+		                                	<div class="form-group">
+		                                        <label for="staticEmail">Estado</label>
+													<select id="idEstado" name="ingreso.estado" class='form-control'>
+							                                 <option value=" " >[SELECCIONE]</option>
+							                                 <option value="habilitado" >habilitado</option>
+							                                 <option value="inhabilitado" >inhabilitado</option>
+							                         </select>
+		                                    </div>
+		                                
+		                                	
+		                                     <div class="form-group">
+		                                        <label for="staticEmail">Colegio</label>
+													<select id="idColegio" name="ingreso.codigocolegio" class='form-control'>
 							                                 <option value=" " >[SELECCIONE]</option>
 							                         </select>
 		                                    </div>
-		                                	
-		                                	
-		                                	
-		                                	t-->
-		                                	<div class="form-group">
-			                                   	<label for="staticEmail">Nombre</label>
-												<input class="form-control" id="idNombre" name="documentacion.nombre" placeholder="Ingrese el asunto"/>
-			                                </div> 
+		                                	 
 		                                	<div class="form-group">
 			                                   	<label for="staticEmail">Asunto</label>
-												<input class="form-control" id="idAsunto" name="documentacion.asunto" placeholder="Ingrese el asunto"/>
+												<input class="form-control" id="idAsunto" name="ingreso.asunto" placeholder="Ingrese el asunto"/>
 			                                </div>
 			                                <div class="form-row">
 			                                    <div class="form-group col-md-6">
 			                                        <label for="staticEmail">Fecha</label>
-														<input class="form-control" id="idFecha" name="documentacion.fecha" placeholder="Ingrese fecha"/>
+														<input class="form-control" id="idFecha" name="ingreso.fecha" placeholder="Ingrese fecha"/>
 			                                    </div>
 			                                 </div>     
-		                                  <div class="form-group">
-		                                        <label for="staticEmail">Colegio</label>
-													<select id="idColegio" name="documentacion.codigoColegio" class='form-control'>
-							                                 <option value=" " >[SELECCIONE]</option>
-							                         </select>
-		                                    </div>
+		                                  
 		                                  
 		                                   
                              	                                    
